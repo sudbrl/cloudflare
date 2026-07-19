@@ -177,7 +177,7 @@ export default function App() {
                         ))}
                         </Pie>
                         <Tooltip
-			formatter={(value) => formatCurrency(Number(value ?? 0))}
+  				formatter={(value) => formatCurrency(Number(value ?? 0))}
                           contentStyle={{
                             borderRadius: "0.5rem",
                             border: "1px solid #e2e8f0",
