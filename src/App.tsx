@@ -225,14 +225,17 @@ export default function App() {
                       tickFormatter={(v) => `$${v}`}
                     />
                     <Tooltip
-                      formatter={(value: number) => formatCurrency(value)}
-                      cursor={{ fill: "#f1f5f9" }}
-                      contentStyle={{
-                        borderRadius: "0.5rem",
-                        border: "1px solid #e2e8f0",
-                        fontSize: "0.875rem",
-                      }}
-                    />
+  formatter={(value: unknown) => [
+    formatCurrency(Number(value ?? 0)),
+    "Amount",
+  ]}
+  cursor={{ fill: "#f1f5f9" }}
+  contentStyle={{
+    borderRadius: "0.5rem",
+    border: "1px solid #e2e8f0",
+    fontSize: "0.875rem",
+  }}
+/>
                     <Bar dataKey="value" fill="#0f766e" radius={[4, 4, 0, 0]} maxBarSize={36} />
                   </BarChart>
                 </ResponsiveContainer>
